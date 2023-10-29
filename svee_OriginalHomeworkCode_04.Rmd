@@ -8,6 +8,8 @@ output:
     toc_float: true
 ---
 
+*Oct 29: I caught a mistake in my own code while doing peer commentary, I came back to fix it -sam*
+
 # Preliminaries
 Set working directory
 ```{r setwd, eval = FALSE}
@@ -62,7 +64,7 @@ Z.prop.test <- function(p1, n1, p2 = NULL, n2 = NULL, p0, alternative = "two.sid
           }}
         
         # warning for one sample t-test
-        if ((n1 * p0 < 5) | (n1 * (1 - p0) < 5 )){
+        if ((n1 * p0 > 5) | (n1 * (1 - p0) > 5 )){
           warning("Check data, assumption of normal distribution violated!")
         }
         

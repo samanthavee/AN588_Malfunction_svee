@@ -1621,7 +1621,8 @@ calculating single-limit confidence bounds.</li>
 <h2>Making the function</h2>
 <p>Module 10 provided the equation for determining the z statistic, it
 also helped me write the code for determining confidence intervals.
-Module 11 helped me write the code for testing alternatives.</p>
+Module 11 helped me write the code for testing alternatives. I also
+referenced source code from functions t.test() and prop.test()</p>
 <pre class="r"><code>Z.prop.test &lt;- function(p1, n1, p2 = NULL, n2 = NULL, p0, alternative = &quot;two.sided&quot;, conf.level = 0.95) {
   # one sample z-test
   if (!is.null(p2) || !is.null(n2)) { 
@@ -1644,7 +1645,7 @@ Module 11 helped me write the code for testing alternatives.</p>
           }}
         
         # warning for one sample t-test
-        if ((n1 * p0 &lt; 5) | (n1 * (1 - p0) &lt; 5 )){
+        if ((n1 * p0 &gt; 5) | (n1 * (1 - p0) &gt; 5 )){
           warning(&quot;Check data, assumption of normal distribution violated!&quot;)
         }
         
@@ -1982,10 +1983,8 @@ for longevity of species with brain weight of 800gm:</p>
 <pre class="r"><code>logpoint.est &lt;- predict(log.m, newdata = data.frame(brain2 = log(800))); logpoint.est</code></pre>
 <pre><code>##      1 
 ## 6.4425</code></pre>
-<p>The PI makes no sense considering this is log transformed data!! I
-don’t know what’s wrong with my code. I’m assuming this log-transformed
-model is much more accurate than the previous but I can’t confirm with
-this data</p>
+<p>This log-transformed model is much more accurate than the previous.
+The predicted value is closer to the actual data points.</p>
 </div>
 </div>
 </div>
