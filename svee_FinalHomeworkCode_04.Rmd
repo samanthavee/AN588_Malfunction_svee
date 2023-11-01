@@ -7,7 +7,6 @@ output:
     toc: true
     toc_float: true
 ---
-xxx
 *Oct 29: I caught a mistake in my own code while doing peer commentary, I came back to fix it -sam* <br>
 *Oct 31: Bhavya returned my peer commentary on time but I forgot to copy the .Rmd before working on my final homework code. The peer commentary file looks a bit strange now. I will push it as is along with my final homework code -sam*
 
